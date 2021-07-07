@@ -34,62 +34,76 @@ namespace Proyecto
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Cuerpo = new System.Windows.Forms.Panel();
             this.Main = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LogoLyout = new System.Windows.Forms.Panel();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.Settings = new FontAwesome.Sharp.IconButton();
-            this.Home = new FontAwesome.Sharp.IconButton();
             this.Selling = new FontAwesome.Sharp.IconButton();
             this.Marketing = new FontAwesome.Sharp.IconButton();
             this.Customers = new FontAwesome.Sharp.IconButton();
             this.Products = new FontAwesome.Sharp.IconButton();
             this.Orders = new FontAwesome.Sharp.IconButton();
             this.Dashboard = new FontAwesome.Sharp.IconButton();
-            this.LogoLyout = new System.Windows.Forms.FlowLayoutPanel();
             this.Nav = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Home2 = new System.Windows.Forms.Label();
+            this.Home = new FontAwesome.Sharp.IconPictureBox();
             this.Main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.LogoLyout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.Nav.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Home)).BeginInit();
             this.SuspendLayout();
             // 
             // Cuerpo
             // 
-            this.Cuerpo.Location = new System.Drawing.Point(206, 0);
+            this.Cuerpo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
+            this.Cuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cuerpo.Location = new System.Drawing.Point(206, 55);
             this.Cuerpo.Name = "Cuerpo";
-            this.Cuerpo.Size = new System.Drawing.Size(1217, 828);
+            this.Cuerpo.Size = new System.Drawing.Size(1220, 773);
             this.Cuerpo.TabIndex = 2;
+            this.Cuerpo.Paint += new System.Windows.Forms.PaintEventHandler(this.Cuerpo_Paint);
             // 
             // Main
             // 
             this.Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
-            this.Main.Controls.Add(this.pictureBox1);
+            this.Main.Controls.Add(this.LogoLyout);
             this.Main.Controls.Add(this.Settings);
-            this.Main.Controls.Add(this.Home);
             this.Main.Controls.Add(this.Selling);
             this.Main.Controls.Add(this.Marketing);
             this.Main.Controls.Add(this.Customers);
             this.Main.Controls.Add(this.Products);
             this.Main.Controls.Add(this.Orders);
             this.Main.Controls.Add(this.Dashboard);
-            this.Main.Controls.Add(this.LogoLyout);
             this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main.Location = new System.Drawing.Point(0, 0);
             this.Main.Name = "Main";
             this.Main.Size = new System.Drawing.Size(206, 828);
             this.Main.TabIndex = 0;
             // 
-            // pictureBox1
+            // LogoLyout
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
+            this.LogoLyout.Controls.Add(this.Logo);
+            this.LogoLyout.Location = new System.Drawing.Point(0, 0);
+            this.LogoLyout.Name = "LogoLyout";
+            this.LogoLyout.Size = new System.Drawing.Size(206, 176);
+            this.LogoLyout.TabIndex = 12;
+            // 
+            // Logo
+            // 
+            this.Logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(25, 20);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(149, 139);
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click_1);
             // 
             // Settings
             // 
+            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Settings.FlatAppearance.BorderSize = 0;
             this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Settings.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -98,10 +112,10 @@ namespace Proyecto
             this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Settings.IconSize = 32;
             this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Settings.Location = new System.Drawing.Point(-3, 679);
+            this.Settings.Location = new System.Drawing.Point(3, 608);
             this.Settings.Name = "Settings";
             this.Settings.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
-            this.Settings.Size = new System.Drawing.Size(200, 65);
+            this.Settings.Size = new System.Drawing.Size(197, 65);
             this.Settings.TabIndex = 11;
             this.Settings.Text = "Setting";
             this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,30 +123,9 @@ namespace Proyecto
             this.Settings.UseVisualStyleBackColor = true;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(19)))));
-            this.Home.FlatAppearance.BorderSize = 0;
-            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Home.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.Home.IconColor = System.Drawing.Color.Gainsboro;
-            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Home.IconSize = 32;
-            this.Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Home.Location = new System.Drawing.Point(3, 182);
-            this.Home.Name = "Home";
-            this.Home.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
-            this.Home.Size = new System.Drawing.Size(197, 65);
-            this.Home.TabIndex = 10;
-            this.Home.Text = "Home";
-            this.Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Home.UseVisualStyleBackColor = false;
-            this.Home.Click += new System.EventHandler(this.Home_Click);
-            // 
             // Selling
             // 
+            this.Selling.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Selling.FlatAppearance.BorderSize = 0;
             this.Selling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Selling.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -141,10 +134,10 @@ namespace Proyecto
             this.Selling.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Selling.IconSize = 32;
             this.Selling.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Selling.Location = new System.Drawing.Point(0, 466);
+            this.Selling.Location = new System.Drawing.Point(3, 395);
             this.Selling.Name = "Selling";
             this.Selling.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
-            this.Selling.Size = new System.Drawing.Size(200, 65);
+            this.Selling.Size = new System.Drawing.Size(197, 65);
             this.Selling.TabIndex = 9;
             this.Selling.Text = "Selling";
             this.Selling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,6 +147,7 @@ namespace Proyecto
             // 
             // Marketing
             // 
+            this.Marketing.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Marketing.FlatAppearance.BorderSize = 0;
             this.Marketing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Marketing.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -162,7 +156,7 @@ namespace Proyecto
             this.Marketing.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Marketing.IconSize = 32;
             this.Marketing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Marketing.Location = new System.Drawing.Point(3, 608);
+            this.Marketing.Location = new System.Drawing.Point(3, 537);
             this.Marketing.Name = "Marketing";
             this.Marketing.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
             this.Marketing.Size = new System.Drawing.Size(197, 65);
@@ -175,6 +169,7 @@ namespace Proyecto
             // 
             // Customers
             // 
+            this.Customers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Customers.FlatAppearance.BorderSize = 0;
             this.Customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Customers.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -183,7 +178,7 @@ namespace Proyecto
             this.Customers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Customers.IconSize = 32;
             this.Customers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Customers.Location = new System.Drawing.Point(3, 537);
+            this.Customers.Location = new System.Drawing.Point(3, 466);
             this.Customers.Name = "Customers";
             this.Customers.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
             this.Customers.Size = new System.Drawing.Size(197, 65);
@@ -197,6 +192,7 @@ namespace Proyecto
             // Products
             // 
             this.Products.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Products.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Products.FlatAppearance.BorderSize = 0;
             this.Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Products.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -205,7 +201,7 @@ namespace Proyecto
             this.Products.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Products.IconSize = 32;
             this.Products.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Products.Location = new System.Drawing.Point(-3, 395);
+            this.Products.Location = new System.Drawing.Point(3, 324);
             this.Products.Name = "Products";
             this.Products.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
             this.Products.Size = new System.Drawing.Size(197, 65);
@@ -219,6 +215,7 @@ namespace Proyecto
             // Orders
             // 
             this.Orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
+            this.Orders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Orders.FlatAppearance.BorderSize = 0;
             this.Orders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Orders.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -227,10 +224,10 @@ namespace Proyecto
             this.Orders.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Orders.IconSize = 32;
             this.Orders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Orders.Location = new System.Drawing.Point(-3, 324);
+            this.Orders.Location = new System.Drawing.Point(3, 253);
             this.Orders.Name = "Orders";
             this.Orders.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
-            this.Orders.Size = new System.Drawing.Size(200, 65);
+            this.Orders.Size = new System.Drawing.Size(197, 65);
             this.Orders.TabIndex = 5;
             this.Orders.Text = "Orders";
             this.Orders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,6 +237,7 @@ namespace Proyecto
             // 
             // Dashboard
             // 
+            this.Dashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Dashboard.FlatAppearance.BorderSize = 0;
             this.Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Dashboard.ForeColor = System.Drawing.SystemColors.MenuBar;
@@ -248,7 +246,7 @@ namespace Proyecto
             this.Dashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Dashboard.IconSize = 32;
             this.Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dashboard.Location = new System.Drawing.Point(0, 253);
+            this.Dashboard.Location = new System.Drawing.Point(3, 182);
             this.Dashboard.Name = "Dashboard";
             this.Dashboard.Padding = new System.Windows.Forms.Padding(20, 0, 10, 0);
             this.Dashboard.Size = new System.Drawing.Size(197, 65);
@@ -258,16 +256,6 @@ namespace Proyecto
             this.Dashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Dashboard.UseVisualStyleBackColor = true;
             this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
-            // 
-            // LogoLyout
-            // 
-            this.LogoLyout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
-            this.LogoLyout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoLyout.Location = new System.Drawing.Point(0, 0);
-            this.LogoLyout.Name = "LogoLyout";
-            this.LogoLyout.Size = new System.Drawing.Size(206, 176);
-            this.LogoLyout.TabIndex = 3;
-            this.LogoLyout.Paint += new System.Windows.Forms.PaintEventHandler(this.LogoLyout_Paint);
             // 
             // Nav
             // 
@@ -279,12 +267,46 @@ namespace Proyecto
             this.Nav.Size = new System.Drawing.Size(206, 828);
             this.Nav.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
+            this.panel1.Controls.Add(this.Home2);
+            this.panel1.Controls.Add(this.Home);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(206, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1220, 55);
+            this.panel1.TabIndex = 0;
+            // 
+            // Home2
+            // 
+            this.Home2.AutoSize = true;
+            this.Home2.Location = new System.Drawing.Point(69, 20);
+            this.Home2.Name = "Home2";
+            this.Home2.Size = new System.Drawing.Size(40, 15);
+            this.Home2.TabIndex = 1;
+            this.Home2.Text = "Home";
+            // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
+            this.Home.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.Home.IconColor = System.Drawing.Color.Gainsboro;
+            this.Home.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home.Location = new System.Drawing.Point(31, 12);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(32, 32);
+            this.Home.TabIndex = 0;
+            this.Home.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1423, 828);
+            this.ClientSize = new System.Drawing.Size(1426, 828);
             this.Controls.Add(this.Cuerpo);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Nav);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Gainsboro;
@@ -293,9 +315,12 @@ namespace Proyecto
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.Main.ResumeLayout(false);
-            this.Main.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.LogoLyout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.Nav.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Home)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,12 +336,13 @@ namespace Proyecto
         private FontAwesome.Sharp.IconButton Products;
         private FontAwesome.Sharp.IconButton Orders;
         private FontAwesome.Sharp.IconButton Dashboard;
-        private System.Windows.Forms.FlowLayoutPanel LogoLyout;
         private System.Windows.Forms.Panel Nav;
-   
-        private FontAwesome.Sharp.IconButton Home;
         private FontAwesome.Sharp.IconButton Settings;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconPictureBox Home;
+        private System.Windows.Forms.Label Home2;
+        private System.Windows.Forms.Panel LogoLyout;
+        private System.Windows.Forms.PictureBox Logo;
     }
 }
 

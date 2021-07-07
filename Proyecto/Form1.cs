@@ -17,6 +17,7 @@ namespace Proyecto
     {
         private IconButton currentBtn;
         private Panel leftBorder;
+        private Form currentChildForm;
 
 
 
@@ -26,6 +27,8 @@ namespace Proyecto
             leftBorder = new Panel();
             leftBorder.Size = new Size(7, 65);
             Main.Controls.Add(leftBorder);
+            
+        
 
         }
         private void ActivateButtom(object senderBtn, Color color)
@@ -45,6 +48,8 @@ namespace Proyecto
                 leftBorder.Location = new Point(0, currentBtn.Location.Y);
                 leftBorder.Visible = true;
                 leftBorder.BringToFront();
+                Home.IconChar = currentBtn.IconChar;
+                Home.IconColor = color;
             }
         }
 
@@ -77,6 +82,9 @@ namespace Proyecto
                 currentBtn.IconColor = Color.Gainsboro;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                Home.IconChar = IconChar.Home;
+                Home.IconColor = Color.Gainsboro;
+                Home2.Text = "Home";
             }
         }
 
@@ -88,14 +96,10 @@ namespace Proyecto
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Home_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, RgbColors.color1);
-        }
 
         private void Dashboard_Click(object sender, EventArgs e)
         {
-            ActivateButtom(sender, RgbColors.color2);
+            ActivateButtom(sender, RgbColors.color1);
         }
 
         private void Orders_Click(object sender, EventArgs e)
@@ -128,9 +132,34 @@ namespace Proyecto
             ActivateButtom(sender, RgbColors.color8);
         }
 
-        private void LogoLyout_Paint(object sender, PaintEventArgs e)
+
+        private void Cuerpo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+
+        private void Logo_Click_1(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButtom();
+            leftBorder.Visible = false;
+        }
+
+        private void OpendChildForm(Form ChildForm)
+        {
+            if(currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            
         }
     }
     
