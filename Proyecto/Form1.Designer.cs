@@ -44,24 +44,25 @@ namespace Proyecto
             this.Orders = new FontAwesome.Sharp.IconButton();
             this.Dashboard = new FontAwesome.Sharp.IconButton();
             this.Nav = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.barraHome = new System.Windows.Forms.Panel();
             this.Home2 = new System.Windows.Forms.Label();
             this.Home = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Main.SuspendLayout();
             this.LogoLyout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.Nav.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.barraHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home)).BeginInit();
             this.SuspendLayout();
             // 
             // Cuerpo
             // 
             this.Cuerpo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
-            this.Cuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Cuerpo.Location = new System.Drawing.Point(206, 55);
+            this.Cuerpo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Cuerpo.Location = new System.Drawing.Point(206, 76);
             this.Cuerpo.Name = "Cuerpo";
-            this.Cuerpo.Size = new System.Drawing.Size(1220, 773);
+            this.Cuerpo.Size = new System.Drawing.Size(1220, 752);
             this.Cuerpo.TabIndex = 2;
             this.Cuerpo.Paint += new System.Windows.Forms.PaintEventHandler(this.Cuerpo_Paint);
             // 
@@ -267,16 +268,16 @@ namespace Proyecto
             this.Nav.Size = new System.Drawing.Size(206, 828);
             this.Nav.TabIndex = 0;
             // 
-            // panel1
+            // barraHome
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
-            this.panel1.Controls.Add(this.Home2);
-            this.panel1.Controls.Add(this.Home);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(206, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1220, 55);
-            this.panel1.TabIndex = 0;
+            this.barraHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(21)))), ((int)(((byte)(23)))));
+            this.barraHome.Controls.Add(this.Home2);
+            this.barraHome.Controls.Add(this.Home);
+            this.barraHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barraHome.Location = new System.Drawing.Point(206, 0);
+            this.barraHome.Name = "barraHome";
+            this.barraHome.Size = new System.Drawing.Size(1220, 55);
+            this.barraHome.TabIndex = 0;
             // 
             // Home2
             // 
@@ -289,7 +290,7 @@ namespace Proyecto
             // 
             // Home
             // 
-            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(17)))), ((int)(((byte)(19)))));
+            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(21)))), ((int)(((byte)(23)))));
             this.Home.ForeColor = System.Drawing.Color.Gainsboro;
             this.Home.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.Home.IconColor = System.Drawing.Color.Gainsboro;
@@ -300,13 +301,23 @@ namespace Proyecto
             this.Home.TabIndex = 0;
             this.Home.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(21)))), ((int)(((byte)(23)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(206, 55);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1220, 21);
+            this.panel2.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 828);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.Cuerpo);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.barraHome);
             this.Controls.Add(this.Nav);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Gainsboro;
@@ -314,12 +325,13 @@ namespace Proyecto
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Main.ResumeLayout(false);
             this.LogoLyout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.Nav.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.barraHome.ResumeLayout(false);
+            this.barraHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home)).EndInit();
             this.ResumeLayout(false);
 
@@ -338,11 +350,12 @@ namespace Proyecto
         private FontAwesome.Sharp.IconButton Dashboard;
         private System.Windows.Forms.Panel Nav;
         private FontAwesome.Sharp.IconButton Settings;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel barraHome;
         private FontAwesome.Sharp.IconPictureBox Home;
         private System.Windows.Forms.Label Home2;
         private System.Windows.Forms.Panel LogoLyout;
         private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

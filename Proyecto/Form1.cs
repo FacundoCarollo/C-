@@ -159,7 +159,16 @@ namespace Proyecto
             ChildForm.TopLevel = false;
             ChildForm.FormBorderStyle = FormBorderStyle.None;
             ChildForm.Dock = DockStyle.Fill;
-            
+            Cuerpo.Controls.Add(ChildForm);
+            Cuerpo.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+            barraHome.Text = ChildForm.Text;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
     
